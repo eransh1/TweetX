@@ -6,9 +6,12 @@ import { login, logout, selectUser } from "./redux/userSlice";
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
-import Dashboard from './pages/Dashboard/Dashboard';
 import { Flip, ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Feeds from './pages/Feeds/Feeds';
+import Users from './pages/Users/Users';
+import Profile from './pages/Profile/Profile';
+import MainPage from './pages/Main Page/MainPage';
 
 const App = () => {
   const user = useSelector(selectUser);
@@ -36,7 +39,7 @@ const App = () => {
 
   useEffect(()=>{
     if(user){
-      navigate("/dashboard")
+      navigate("/dashboard/feed")
     }
    
      //eslint-disable-next-line
@@ -60,7 +63,12 @@ const App = () => {
        <Routes>
      <Route path="/" element={<Login />} />
      <Route path="/signup" element={<Signup />} />
-     <Route path='/dashboard' element={<Dashboard/>}></Route>
+     <Route path='/dashboard' element={<MainPage/>}>
+     <Route path="/dashboard/feed" element={<Feeds />} />
+     <Route path="/dashboard/users" element={<Users />} />
+     <Route path="/dashboard/profile" element={<Profile />} />
+     </Route>
+     
      </Routes> 
    </>
   )

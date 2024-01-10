@@ -1,0 +1,82 @@
+.outerCont{
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 2rem;
+}
+.leftCont{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.loginButton{
+    padding: 0.5rem 0;
+    width: 150px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.title{
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    color: #5d676e;
+}
+
+.form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.input{
+    padding-left: 1rem;
+    height: 50px;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    width: 97%;
+}
+.input:focus{
+    outline: none;
+}
+
+.signUpButton{
+    margin-left: auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: #ff748d;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.passwordCont{
+    width: 100%;
+    position: relative;
+}
+.icon{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #5d676e;
+    cursor: pointer;
+}
+.rightCont{
+    width: 55%;
+    display: flex;
+}
+.image{
+    width: 80%;
+    max-height: 80vh;
+    margin-left: auto;
+}

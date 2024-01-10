@@ -20,6 +20,8 @@ const Signup = () => {
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
 
+
+
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then(() => {
@@ -49,7 +51,6 @@ const Signup = () => {
                 name:userName,
                 image:"https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
                 email:email,
-                follower_list:[],
                 following_list:[],
                 post_list:[]
             })      
@@ -79,7 +80,7 @@ try {
   toast.dismiss()
   dispatch(create({ newUser }));
   toast.success("Successfully Registered")
-  navigate("/");
+  // navigate("/");
 } 
 catch (error) {
   toast.dismiss()
@@ -106,11 +107,11 @@ setLoading(false)
       <input className={styles.input} type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
       <input className={styles.input} type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
       <input className={styles.input} type="password" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
-      <button disabled={loading} className={styles.signUpButton} type='Submit'>Sign Up</button>
+   { !loading&&<button disabled={loading} className={styles.signUpButton} type='Submit'>Sign Up</button>}
     </form>
     </div>
     <div className={styles.rightCont}>
-
+    <img className={styles.image} src="/public/Sign up Image.png" alt="signupImage" />
     </div>
      </section>
     </>

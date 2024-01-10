@@ -1,6 +1,7 @@
 .outerCont{
     padding: 0 1.5rem;
     display: flex;
+    gap: 2rem;
 }
 .leftCont{
     display: flex;
@@ -53,4 +54,13 @@
     font-size: 1.2rem;
     border-radius: 7px;
     cursor: pointer;
+}
+.rightCont{
+    width: 55%;
+    display: flex;
+}
+.image{
+    width: 80%;
+    max-height: 80vh;
+    margin-left: auto;
 }
