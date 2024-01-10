@@ -1,0 +1,56 @@
+.outerCont{
+    padding: 0 1.5rem;
+    display: flex;
+}
+.leftCont{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.loginButton{
+    padding: 0.5rem 0;
+    width: 150px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.title{
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    color: #5d676e;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.input{
+    padding: 1rem;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 7px;
+    font-size: 1.2rem;
+}
+.input:focus{
+    outline: none;
+}
+
+.signUpButton{
+    margin-left: auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: #ff748d;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    cursor: pointer;
+}

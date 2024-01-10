@@ -1,0 +1,13 @@
+.outerCOnt{
+    padding: 0 1.5rem;
+    max-width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    color: #ff9aad;
+    font-size: 1.9rem;
+}
+
