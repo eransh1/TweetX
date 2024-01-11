@@ -1,17 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "./DashboardNavbar.module.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { signOut } from 'firebase/auth';
-import { auth } from '../../firebase';
-import { logout, setUserData } from '../../redux/userSlice';
+import { auth, db } from '../../firebase';
+import { logout, selectUser, selectUserDoc, setUserData } from '../../redux/userSlice';
 import { remove } from '../../redux/newUserSlice';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { collection, getDocs, query } from 'firebase/firestore';
 
 const DashboardNavbar = () => {
     const location = useLocation();
     const dispatch=useDispatch()
+    const user = useSelector(selectUser);
+    const userDoc = useSelector(selectUserDoc);
     const navigate=useNavigate()
+    const is_logged_in=localStorage.getItem('is_logged_in')
+  // CHECK FOR USER DOC DATA
+  useEffect(()=>{
+  if(!is_logged_in){navigate("/");return}
+  if(user?.email&&!userDoc){fetchUserDocFromFirebase()}
+  
+  //eslint-disable-next-line
+  },[user])
+  
+  
+  async function fetchUserDocFromFirebase(){
+    const userDataRef = collection(db, "users");
+    const q = query(userDataRef);
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+     if(doc.id===user?.email){
+      dispatch(setUserData({...doc.data(),id:user.email})); 
+     }
+    }); 
+  }
+
+
     const logoutt=()=>{
         signOut(auth)
          .then(() => {dispatch(logout());dispatch(remove());dispatch(setUserData(null))})

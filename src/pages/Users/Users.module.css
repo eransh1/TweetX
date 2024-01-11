@@ -1,0 +1,63 @@
+.outerCont{
+    width: 100%;
+    max-height: 89vh;
+    min-height: 89vh;
+    overflow: hidden;
+    display: flex;
+}
+.innerCont{
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 50%;
+}
+.writeButton{
+    width: 110px;
+    height: 39px;
+    background-color: #f6647f;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+
+.postOuterCont{
+    width: 100%;
+   max-height: 77vh;
+    overflow-y: auto;
+}
+.postOuterCont::-webkit-scrollbar {
+    /* width: .3vw; */
+    width: 5px;
+    position: fixed;
+    border-radius: 10px;
+    height: 5px;
+    color: blue !important;
+}
+
+.postOuterCont::-webkit-scrollbar-thumb {
+    background: #6d6666 !important;
+    border-radius: 10px !important;
+}
+
+.postOuterCont::-webkit-scrollbar-track {
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.noFeedsToShowCont{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #dadada;
+}
+
+@media(max-width:1024px){
+    .innerCont{
+        min-width: 90%; 
+    }
+      
+}

@@ -52,6 +52,7 @@ const Signup = () => {
                 image:"https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
                 email:email,
                 following_list:[],
+                follower_list:[],
                 post_list:[]
             })      
     } catch (error) {
@@ -80,7 +81,7 @@ try {
   toast.dismiss()
   dispatch(create({ newUser }));
   toast.success("Successfully Registered")
-  // navigate("/");
+  navigate("/");
 } 
 catch (error) {
   toast.dismiss()
