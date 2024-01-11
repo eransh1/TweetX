@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Login.module.css"
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,18 @@ const Login = () => {
   const [loading,setLoading]=useState(false)
   const provider = new GoogleAuthProvider();
   const[showPass,setShowPass]=useState(false)
+  const is_logged_in=localStorage.getItem('is_logged_in')
 
+  useEffect(()=>{
+    if(is_logged_in){
+      navigate("/dashboard/feed")
+    }
+   
+     //eslint-disable-next-line
+    },[])
+
+
+  //eslint-disable-next-line
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then(async () => {

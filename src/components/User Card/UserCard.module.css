@@ -33,6 +33,7 @@
     color: #767676;
     font-size: 1.3rem;
     font-weight: 600;
+    text-transform: capitalize;
 }
 .timePosted{
     width: max-content;
@@ -63,4 +64,11 @@
     margin: 1.5rem 0;
     cursor: pointer;
     margin-left: auto;   
+}
+
+@media(max-width:600px){
+    .outerCont{
+      padding: 0;
+      width: 99.5%;
+    }
 }

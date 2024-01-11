@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Signup.module.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,7 @@ import { doc, setDoc } from 'firebase/firestore';
 
 const Signup = () => {
     const navigate = useNavigate();
-  const [userType, setUserType] = useState("Individual");
+  const userType='Individual'
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -19,9 +19,17 @@ const Signup = () => {
   const [loading,setLoading]=useState(false)
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
+  const is_logged_in=localStorage.getItem('is_logged_in')
 
-
-
+  useEffect(()=>{
+    if(is_logged_in){
+      navigate("/dashboard/feed")
+    }
+   
+     //eslint-disable-next-line
+    },[])
+    
+  //eslint-disable-next-line
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then(() => {

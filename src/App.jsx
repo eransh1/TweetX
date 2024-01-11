@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { auth } from './firebase';
 import { login, logout } from "./redux/userSlice";
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import { Flip, ToastContainer } from 'react-toastify';
@@ -12,11 +12,12 @@ import Feeds from './pages/Feeds/Feeds';
 import Users from './pages/Users/Users';
 import Profile from './pages/Profile/Profile';
 import MainPage from './pages/Main Page/MainPage';
+import PageNotFound from './pages/Error/PageNotFound';
 
 const App = () => {
   const dispatch = useDispatch();
-  const navigate=useNavigate()
-  const is_logged_in=localStorage.getItem('is_logged_in')
+  
+ 
 
   useEffect(() => {
     
@@ -39,13 +40,7 @@ const App = () => {
   //eslint-disable-next-line
   }, []);
 
-  useEffect(()=>{
-    if(is_logged_in){
-      navigate("/dashboard/feed")
-    }
-   
-     //eslint-disable-next-line
-    },[])
+ 
 
   return (
    <>
@@ -63,6 +58,7 @@ const App = () => {
                 transition={Flip}
             />
        <Routes>
+      <Route path="*" element={<PageNotFound showButton={true} />} />
      <Route path="/" element={<Login />} />
      <Route path="/signup" element={<Signup />} />
      <Route path='/dashboard' element={<MainPage/>}>

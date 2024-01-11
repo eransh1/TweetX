@@ -24,7 +24,8 @@
 
 .postOuterCont{
     width: 100%;
-   max-height: 77vh;
+   /* max-height: 77vh; */
+   height: calc(100vh - 70px);
     overflow-y: auto;
 }
 .postOuterCont::-webkit-scrollbar {

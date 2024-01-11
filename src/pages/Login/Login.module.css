@@ -66,7 +66,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    right: 1rem;
+    right: 2rem;
     font-size: 1.5rem;
     color: #5d676e;
     cursor: pointer;
@@ -80,3 +80,26 @@
     max-height: 80vh;
     margin-left: auto;
 }
+
+
+@media(max-width:980px){
+.leftCont{
+    width: 60%;
+}
+.rightCont{
+    width: 40%;
+
+}
+}
+
+@media(max-width:760px){
+    .outerCont{
+        flex-direction: column;
+    }
+    .leftCont{
+        width: 95%;
+    }
+    .rightCont{
+        width: 95%;    
+    }
+    }

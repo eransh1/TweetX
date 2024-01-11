@@ -64,3 +64,16 @@
     max-height: 80vh;
     margin-left: auto;
 }
+
+
+@media(max-width:760px){
+    .outerCont{
+        flex-direction: column;
+    }
+    .leftCont{
+        width: 95%;
+    }
+    .rightCont{
+        width: 95%;    
+    }
+    }
