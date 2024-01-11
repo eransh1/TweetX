@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from "./Profile.module.css"
+import UserInfoPannel from '../../components/User Info Pannel/UserInfoPannel'
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <section className={styles.outerCont}>
+      <section className={styles.innerCont}>
+      <UserInfoPannel/>
+      </section>
+      </section>
   )
 }
 

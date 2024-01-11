@@ -35,8 +35,7 @@
     color: white;
 }
 .innerCont{
-    max-width: 50%;
-    min-width: 600px;
+    width: 600px;
     background-color: #fff;
     border-radius: 11px;
     height: 350px;
@@ -64,4 +63,10 @@
     font-size: 1.2rem;
     margin: 1.5rem 0;
     cursor: pointer;
+}
+
+@media(max-width:501px){
+    .innerCont{
+        width: 99%;
+    }
 }

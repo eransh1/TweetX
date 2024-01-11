@@ -25,11 +25,11 @@ if(userDoc){
   }
 
   const userEmails=[]
-  if(userDoc.follower_list.length){
-    userDoc.follower_list.forEach((user)=>{
-      userEmails.push(user)
-    })
-  }
+  // if(userDoc.follower_list.length){
+  //   userDoc.follower_list.forEach((user)=>{
+  //     userEmails.push(user)
+  //   })
+  // }
   if(userDoc.following_list.length){
     userDoc.following_list.forEach((user)=>{
       userEmails.push(user)

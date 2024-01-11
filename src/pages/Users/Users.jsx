@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./Users.module.css"
 import UserCard from '../../components/User Card/UserCard'
-import { useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { selectUserDoc } from '../../redux/userSlice';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../firebase';
@@ -10,6 +10,7 @@ const Users = () => {
   const userDoc = useSelector(selectUserDoc);
   const[loading,setLoading]=useState(true)
   const[usersList,setUsersList]=useState([])
+
 
 useEffect(()=>{
   if(userDoc){
@@ -34,6 +35,9 @@ useEffect(()=>{
     setUsersList(tempUsersList)
     setLoading(false)
   }
+
+
+
 
   return (
    <>
