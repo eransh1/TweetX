@@ -81,7 +81,7 @@ const Login = () => {
     </form>
     </div>
     <div className={styles.rightCont}>
-    <img className={styles.image} src="/public/Sign up Image.png" alt="signupImage" />
+    <img className={styles.image} src="https://firebasestorage.googleapis.com/v0/b/tweetx-project.appspot.com/o/images%2FSign%20up%20Image.png?alt=media&token=f06e5625-8bad-400a-afbc-5562d54d04ac" alt="signupImage" />
     </div>
      </section>
 </>

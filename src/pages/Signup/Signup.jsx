@@ -57,7 +57,7 @@ const Signup = () => {
         await setDoc(
          doc(db, "users", email),{
                 name:userName,
-                image:"https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg",
+                image:"https://firebasestorage.googleapis.com/v0/b/tweetx-project.appspot.com/o/images%2Fuser_default_image.jpg?alt=media&token=9f917390-2a6d-4504-b1ee-09f420e96b0f",
                 email:email,
                 following_list:[],
                 follower_list:[],
@@ -120,7 +120,7 @@ setLoading(false)
     </form>
     </div>
     <div className={styles.rightCont}>
-    <img className={styles.image} src="/public/Sign up Image.png" alt="signupImage" />
+    <img className={styles.image} src="https://firebasestorage.googleapis.com/v0/b/tweetx-project.appspot.com/o/images%2FSign%20up%20Image.png?alt=media&token=f06e5625-8bad-400a-afbc-5562d54d04ac" alt="signupImage" />
     </div>
      </section>
     </>
